@@ -18,6 +18,7 @@ gnu-getopt
 gnutls
 go
 helm
+htop
 hub
 icu4c
 jpeg
@@ -38,6 +39,8 @@ mdcat
 ncurses
 nettle
 node
+notionfy
+openssl
 openssl@1.1
 p11-kit
 pcre
@@ -53,6 +56,7 @@ python@2
 python@3.8
 readline
 redis
+ripgrep
 sops
 sqlite
 tcl-tk

@@ -6,7 +6,7 @@ export PATH="$PATH:/Users/todd/.local/bin:/.local/bin"
  #Path to your oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
 ZSH_THEME="agnoster"
-plugins=(zsh-autosuggestions)
+plugins=()
 # git - removed this in favor of tmux
 source $ZSH/oh-my-zsh.sh
 DEFAULT_USER="todd"
@@ -51,10 +51,26 @@ function kexec() {
     echo "using pod=$pod"
     k exec $pod $container -it $cmd
 }
+
+gd() {
+  preview="git diff $@ --color=always -- {-1}"
+  git diff $@ --name-only | fzf -m --ansi --preview $preview
+}
+
 # Z cmd utility to auto jump to directories
 . /usr/local/bin/z.sh
 eval "$(direnv hook zsh)"
 
+# 0 -- vanilla completion (abc => abc)
+# 1 -- smart case completion (abc => Abc)
+# 2 -- word flex completion (abc => A-big-Car)
+# 3 -- full flex completion (abc => ABraCadabra)
+zstyle ':completion:*' matcher-list '' \
+  'm:{a-z\-}={A-Z\_}' \
+  'r:[^[:alpha:]]||[[:alpha:]]=** r:|=* m:{a-z\-}={A-Z\_}' \
+  'r:|?=** m:{a-z\-}={A-Z\_}'
+
+ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=3'
 
 # Add fuzzy search to zsh
 export FZF_DEFAULT_COMMAND="fd --hidden --exclude '*migrations'"
