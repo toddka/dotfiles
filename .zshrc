@@ -75,3 +75,6 @@ ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=3'
 # Add fuzzy search to zsh
 export FZF_DEFAULT_COMMAND="fd --hidden --exclude '*migrations'"
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+eval "$(pyenv init -)"
+
