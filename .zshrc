@@ -3,16 +3,27 @@ export PATH=$HOME/bin:/usr/local/bin
 export PATH=/usr/bin:/usr/local/bin:/bin:/usr/sbin:/sbin:$PATH
 export PATH="$PATH:/Users/todd/.local/bin:/.local/bin"
 
+# visuals
+set -o vi
+export VISUAL=vim
+export EDITOR="$VISUAL"
+export TERM=xterm-256color
+
  #Path to your oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
-ZSH_THEME="agnoster"
+ZSH_THEME="spaceship"
 plugins=()
+SPACESHIP_VI_MODE_SHOW=false
+
+
 # git - removed this in favor of tmux
 source $ZSH/oh-my-zsh.sh
 DEFAULT_USER="todd"
-source /Users/todd/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-. ~/.aliases # source a cleanly maintained alias file
+# source /Users/todd/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
+
+
+. ~/.aliases # source a cleanly maintained alias file
 export PATH="/usr/local/opt/postgresql@9.6/bin:$PATH"
 # source /Users/todd/code/lola-server/venv/bin/activate.sh
 
@@ -78,3 +89,17 @@ export FZF_DEFAULT_COMMAND="fd --hidden --exclude '*migrations'"
 
 eval "$(pyenv init -)"
 
+# If you come from bash you might have to change your $PATH.
+export PATH=$HOME/bin:/usr/local/bin
+export PATH=/usr/bin:/usr/local/bin:/bin:/usr/sbin:/sbin:$PATH
+export PATH="$PATH:/Users/todd/.local/bin:/.local/bin"
+
+
+
+export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm
+
+
+# Set Spaceship ZSH as a prompt
+autoload -U promptinit; promptinit
+prompt spaceship
