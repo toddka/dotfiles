@@ -1,5 +1,7 @@
 :inoremap jj <esc>
 
+set relativenumber number
+
 " Default copy/paste to system keyboard
 set clipboard=unnamedplus
 
@@ -22,4 +24,10 @@ set visualbell
 set encoding=utf-8
 
 " Set line color
+
 :highlight LineNr ctermfg=grey
+
+let &t_SI = "\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShape=1\x7\<Esc>\\"
+let &t_SR = "\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShape=2\x7\<Esc>\\"
+let &t_EI = "\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShape=0\x7\<Esc>\\"
+
