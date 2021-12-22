@@ -3,6 +3,13 @@ if ! ~/install.sh; then
   ~/dotfiles/install.sh 
 fi
 
+if [ -f "$HOME/install.sh" ]; 
+then
+    ~/install.sh;
+else
+    ~/dotfiles/install.sh;
+fi
+
 # visuals
 set -o vi
 export VISUAL=vim
