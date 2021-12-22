@@ -1,5 +1,5 @@
 # installs
-./install.sh
+~/install.sh
 
 # visuals
 set -o vi

@@ -8,4 +8,5 @@ alias v="$VISUAL"
 # Pretty print the path
 alias path='echo $PATH | tr -s ":" "\n"'
 
-# TODO: add alias for docker exec that installs everything for zsh
+# Monthly
+alias be='docker exec -u root ${EXEC_FLAGS:--it} monthly_debug /bin/zsh'
