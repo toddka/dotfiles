@@ -1,4 +1,27 @@
 #!/bin/sh
+
+# Add symlinks if the git `config` alias isn't being used (see README.md)
+if ! command -v config &> /dev/null
+then
+    # dotfiles directory
+    dotfiledir=${HOME}/dotfiles
+
+    # list of files/folders to symlink in ${homedir}
+    files=".aliases .functions .tmux.conf .tmux.conf.local .vimrc .zshrc .gitconfig"
+
+    # change to the dotfiles directory
+    echo "Changing to the ${dotfiledir} directory"
+    cd ${dotfiledir}
+    echo "...done"
+
+    # create symlinks (will overwrite old dotfiles)
+    for file in ${files}; do
+        echo "Creating symlink to $file in home directory."
+        ln -sf ${dotfiledir}/.${file} ${homedir}/.${file}
+    done
+fi
+
+
 if [ -f "$HOME/.dotfiles-installed-flag" ]; then
     echo "Already installed dotfile deps."
     echo "Run rm \"$HOME/.dotfiles-installed-flag\" to re-run installs."

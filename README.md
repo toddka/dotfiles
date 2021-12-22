@@ -1,4 +1,4 @@
-# To edit dotfiles on a new machine
+# To edit dotfiles on a new machine...
 ```
 git clone --bare https://github.com/toddka/dotfiles $HOME/.cfg
 function config {
@@ -15,3 +15,5 @@ fi;
 config checkout
 config config status.showUntrackedFiles no
 ```
+This is mainly useful for main dev machines where symlinking isn't ideal. On containers,
+`install.sh` will create symlinks for listed files.
