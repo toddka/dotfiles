@@ -8,5 +8,13 @@ alias v="$VISUAL"
 # Pretty print the path
 alias path='echo $PATH | tr -s ":" "\n"'
 
+# DOCKER
+alias d-rai='docker rmi -f $(docker images -aq)'   # Remove all images
+alias d-rav='docker rm -vf $(docker ps -aq)'       # Remove all volumes
+alias d-sac='docker stop $(docker ps -a -q)'       # Stop all containers
+alias d-rac='docker rm -f $(docker ps -a -q)'      # Remove all containers
+alias d-srac='d-sac && d-rac'                      # Stop and remove all containers
+alias d-sp='docker system prune -af --volumes'     # Remove entire docker system
+
 # Monthly
 alias be='docker exec -u root ${EXEC_FLAGS:--it} monthly_debug /bin/zsh'

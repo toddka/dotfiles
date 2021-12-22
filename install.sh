@@ -49,6 +49,11 @@ esac
 
 ### oh-my-zsh
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+if [ -f "$HOME/.zshrc.pre-oh-my-zsh" ]; then
+    # hack to undo oh-my-zsh installation's zshrc overwrite.
+    rm -rf "$HOME/.zshrc"
+    mv "$HOME/.zshrc.pre-oh-my-zsh" "$HOME/.zshrc"
+fi
 
 #### oh-my-zsh spaceship
 git clone https://github.com/spaceship-prompt/spaceship-prompt.git "$ZSH_CUSTOM/themes/spaceship-prompt" --depth=1
