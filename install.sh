@@ -13,7 +13,7 @@ then
     ln -s -f ~/dotfiles/.gitconfig ~/.gitconfig
 fi
 
-
+# Install packages
 if [ -f "$HOME/.dotfiles-installed-flag" ]; then
     echo "Already installed dotfile deps."
     echo "Run rm \"$HOME/.dotfiles-installed-flag\" to re-run installs."
@@ -22,7 +22,7 @@ fi
 
 touch "$HOME/.dotfiles-installed-flag"
 
-# OS-specific installs
+## OS-specific installs
 case "$(uname -s)" in
    Darwin)
      # fzf
@@ -45,11 +45,11 @@ case "$(uname -s)" in
      ;;
 esac
 
-# Other installs
+## Other installs
 
-# oh-my-zsh
+### oh-my-zsh
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 
-## oh-my-zsh spaceship
+#### oh-my-zsh spaceship
 git clone https://github.com/spaceship-prompt/spaceship-prompt.git "$ZSH_CUSTOM/themes/spaceship-prompt" --depth=1
 ln -s "$ZSH_CUSTOM/themes/spaceship-prompt/spaceship.zsh-theme" "$ZSH_CUSTOM/themes/spaceship.zsh-theme"
