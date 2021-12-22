@@ -1,5 +1,7 @@
 # installs
-~/install.sh
+if ! ~/install.sh; then
+  ~/dotfiles/install.sh 
+fi
 
 # visuals
 set -o vi
