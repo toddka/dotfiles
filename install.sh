@@ -33,7 +33,8 @@ case "$(uname -s)" in
 
    Linux)
      # fzf
-     sudo apt-get install fzf
+     git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
+     echo "y y n" | ~/.fzf/install
      ;;
 
    CYGWIN*|MINGW32*|MSYS*|MINGW*)
