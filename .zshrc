@@ -24,9 +24,6 @@ export LANG=en_US.UTF-8
 # source functions
 . ~/.functions
 
-# homebrew on m1
-export PATH=/opt/homebrew/bin:$PATH
-
 # fuzzy searching
 export FZF_BASE=$(which fzf)
 
@@ -41,3 +38,6 @@ source $ZSH/oh-my-zsh.sh
 # TODO: not sure if this is useful for anything
 # autoload -U promptinit; promptinit
 # prompt spaceship
+
+# homebrew on m1
+export PATH=/opt/homebrew/bin:$PATH
