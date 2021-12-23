@@ -2,8 +2,8 @@
 
 # Install packages
 if [ -f "$HOME/.dotfiles-installed-flag" ]; then
-    echo "Already installed dotfile deps."
-    echo "Run rm \"$HOME/.dotfiles-installed-flag\" to re-run installs."
+    # "Already installed dotfile deps."
+    # "Run rm \"$HOME/.dotfiles-installed-flag\" to re-run installs."
     exit 1
 fi
 
