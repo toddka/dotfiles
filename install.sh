@@ -56,6 +56,8 @@ if [ -f "$HOME/.zshrc.pre-oh-my-zsh" ]; then
     mv "$HOME/.zshrc.pre-oh-my-zsh" "$HOME/.zshrc"
 fi
 
+echo "install spaceship"
+
 #### oh-my-zsh spaceship
 export ZSH="$HOME/.oh-my-zsh"
 export ZSH_CUSTOM="$ZSH/custom"
