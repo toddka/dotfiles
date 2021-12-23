@@ -17,3 +17,5 @@ config config status.showUntrackedFiles no
 ```
 This is mainly useful for main dev machines where symlinking isn't ideal. On containers,
 `install.sh` will create symlinks for listed files.
+
+Fix ZSH funkiness [on OSX](https://rick.cogley.info/post/use-homebrew-zsh-instead-of-the-osx-default/).
