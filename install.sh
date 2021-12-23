@@ -48,15 +48,13 @@ esac
 
 ### oh-my-zsh
 rm "$HOME/.zshrc.pre-oh-my-zsh"
-sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" &
+wait
 if [ -f "$HOME/.zshrc.pre-oh-my-zsh" ]; then
     # hack to undo oh-my-zsh installation's zshrc overwrite.
-    echo "removing pre-oh-my-zsh"
     rm -rf "$HOME/.zshrc"
     mv "$HOME/.zshrc.pre-oh-my-zsh" "$HOME/.zshrc"
 fi
-
-echo "install spaceship"
 
 #### oh-my-zsh spaceship
 export ZSH="$HOME/.oh-my-zsh"
