@@ -1,18 +1,5 @@
 #!/bin/sh
 
-# Add symlinks if the git `config` alias isn't being used (see README.md)
-if ! command -v config &> /dev/null
-then
-    # TODO: do this more elegantly
-    ln -s -f ~/dotfiles/.zshrc ~/.zshrc
-    ln -s -f ~/dotfiles/.aliases ~/.aliases
-    ln -s -f ~/dotfiles/.functions ~/.functions
-    ln -s -f ~/dotfiles/.tmux.conf ~/.tmux.conf
-    ln -s -f ~/dotfiles/.tmux.conf.local ~/.tmux.conf.local
-    ln -s -f ~/dotfiles/.vimrc ~/.vimrc
-    ln -s -f ~/dotfiles/.gitconfig ~/.gitconfig
-fi
-
 # Install packages
 if [ -f "$HOME/.dotfiles-installed-flag" ]; then
     echo "Already installed dotfile deps."
@@ -35,6 +22,17 @@ case "$(uname -s)" in
      # fzf
      git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
      echo "y y n" | ~/.fzf/install
+
+     # symlinks on dev boxes
+     ## this is me being super lazy because I don't want symlinks on MacOS
+     ## and i can't be bothered to find a cleaner way to do this
+     ln -s -f ~/dotfiles/.zshrc ~/.zshrc
+     ln -s -f ~/dotfiles/.aliases ~/.aliases
+     ln -s -f ~/dotfiles/.functions ~/.functions
+     ln -s -f ~/dotfiles/.tmux.conf ~/.tmux.conf
+     ln -s -f ~/dotfiles/.tmux.conf.local ~/.tmux.conf.local
+     ln -s -f ~/dotfiles/.vimrc ~/.vimrc
+     ln -s -f ~/dotfiles/.gitconfig ~/.gitconfig
      ;;
 
    CYGWIN*|MINGW32*|MSYS*|MINGW*)
