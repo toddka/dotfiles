@@ -17,4 +17,4 @@ alias d-srac='d-sac && d-rac'                      # Stop and remove all contain
 alias d-sp='docker system prune -af --volumes'     # Remove entire docker system
 
 # Monthly
-alias be='docker exec -u root ${EXEC_FLAGS:--it} monthly_debug /bin/zsh'
+alias be='docker exec -u user ${EXEC_FLAGS:--it} monthly_debug /bin/zsh'
