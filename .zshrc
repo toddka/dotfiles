@@ -25,7 +25,7 @@ export LANG=en_US.UTF-8
 . ~/.functions
 
 # fuzzy searching
-export FZF_BASE=/path/to/fzf/install/dir
+export FZF_BASE=$(which fzf)
 
 # oh my zsh
 export ZSH_DISABLE_COMPFIX="true"
