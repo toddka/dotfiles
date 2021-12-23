@@ -8,7 +8,7 @@ alias v="$VISUAL"
 # Pretty print the path
 alias path='echo $PATH | tr -s ":" "\n"'
 
-# DOCKER
+# Docker
 alias d-rai='docker rmi -f $(docker images -aq)'   # Remove all images
 alias d-rav='docker rm -vf $(docker ps -aq)'       # Remove all volumes
 alias d-sac='docker stop $(docker ps -a -q)'       # Stop all containers
@@ -19,15 +19,15 @@ alias d-sp='docker system prune -af --volumes'     # Remove entire docker system
 # Monthly
 alias be='docker exec -u user ${EXEC_FLAGS:--it} monthly_debug /bin/zsh'
 
-# bindings
+# Binds
 ## give us access to ^Q
 stty -ixon
 
-## vi mode (use vim bindings on terminal)
+## Vi mode (use vim bindings on terminal)
 bindkey -v
 bindkey "^F" vi-cmd-mode
 
-## handy keybindings
+## Handy keybindings
 bindkey "^A" beginning-of-line
 bindkey "^E" end-of-line
 bindkey "^K" kill-line
