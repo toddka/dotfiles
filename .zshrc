@@ -1,8 +1,4 @@
 # installs
-if ! ~/install.sh; then
-  ~/dotfiles/install.sh 
-fi
-
 if [ -f "$HOME/install.sh" ]; 
 then
     ~/install.sh;

@@ -57,5 +57,6 @@ if [ -f "$HOME/.zshrc.pre-oh-my-zsh" ]; then
 fi
 
 #### oh-my-zsh spaceship
+export ZSH="$HOME/.oh-my-zsh"
 git clone https://github.com/spaceship-prompt/spaceship-prompt.git "$ZSH_CUSTOM/themes/spaceship-prompt" --depth=1
-ln -s "$ZSH_CUSTOM/themes/spaceship-prompt/spaceship.zsh-theme" "$ZSH_CUSTOM/themes/spaceship.zsh-theme"
+ln -s "$ZSH_CUSTOM/themes/spaceship-prompt/spaceship.zsh-theme" "$ZSH/themes/spaceship.zsh-theme"
