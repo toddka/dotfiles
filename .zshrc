@@ -33,7 +33,7 @@ export ZSH="$HOME/.oh-my-zsh"
 ZSH_THEME="spaceship"
 plugins=(fzf)
 SPACESHIP_VI_MODE_SHOW=false
-source $ZSH/oh-my-zsh.sh >/dev/null 2>&1
+source $ZSH/oh-my-zsh.sh
 
 # TODO: not sure if this is useful for anything
 # autoload -U promptinit; promptinit
